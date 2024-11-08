@@ -1,0 +1,74 @@
+{
+    "id": "01aefa93-6044-4159-8358-7e91310aa05f",
+    "sceneType": "SCENE",
+    "settings": {
+        "snapEnabled": true,
+        "exportClass": true,
+        "autoImport": true,
+        "importFileExtension": true,
+        "preloadPackFiles": [],
+        "createMethodName": "editorCreate",
+        "sceneKey": "Level",
+        "borderWidth": 256,
+        "borderHeight": 240
+    },
+    "displayList": [
+        {
+            "type": "TilemapLayer",
+            "id": "2000b442-cf00-4b4c-a5db-435c203d30d4",
+            "label": "tiles",
+            "scope": "CLASS",
+            "y": 112,
+            "tilemapId": "2c53f502-0f8c-4a8d-8308-a5ebbde80df9",
+            "layerName": "Tile Layer 1",
+            "tilesets": [
+                "Blocks"
+            ]
+        },
+        {
+            "type": "ArcadeImage",
+            "id": "29b830f4-80dd-4b7d-aa98-d9e1119eebc9",
+            "label": "guapen_1",
+            "scope": "CLASS",
+            "texture": {
+                "key": "guapen"
+            },
+            "x": 64,
+            "y": 48,
+            "scaleX": 0.06267551584446829,
+            "scaleY": 0.06267551584446829,
+            "body.bounce.y": 0.5,
+            "collideWorldBounds": true,
+            "body.width": 208,
+            "body.height": 240
+        }
+    ],
+    "plainObjects": [
+        {
+            "id": "2c53f502-0f8c-4a8d-8308-a5ebbde80df9",
+            "type": "Tilemap",
+            "label": "groundTiles",
+            "key": "groundTiles",
+            "tilesets": [
+                {
+                    "name": "Blocks",
+                    "imageKey": "Blocks"
+                }
+            ]
+        },
+        {
+            "id": "277be11d-95d1-4ab8-9cc6-d8538b0713e3",
+            "type": "Collider",
+            "label": "collider",
+            "scope": "LOCAL",
+            "object1": "guapen_1",
+            "object2": "tiles"
+        }
+    ],
+    "meta": {
+        "app": "Phaser Editor - Scene Editor",
+        "url": "https://phaser.io/editor",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    }
+}
