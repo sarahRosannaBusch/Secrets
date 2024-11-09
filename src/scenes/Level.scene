@@ -14,55 +14,70 @@
     },
     "displayList": [
         {
-            "type": "TilemapLayer",
-            "id": "2000b442-cf00-4b4c-a5db-435c203d30d4",
-            "label": "tiles",
+            "type": "EditableTilemapLayer",
+            "id": "8b291ce2-7714-4077-99db-feec0f0633ab",
+            "label": "collision_layer",
             "scope": "CLASS",
-            "y": 112,
-            "tilemapId": "2c53f502-0f8c-4a8d-8308-a5ebbde80df9",
-            "layerName": "Tile Layer 1",
-            "tilesets": [
-                "Blocks"
-            ]
+            "tilemapId": "fc081465-64db-49e0-91a2-a6f75382dc44"
         },
         {
-            "type": "ArcadeImage",
-            "id": "29b830f4-80dd-4b7d-aa98-d9e1119eebc9",
-            "label": "guapen_1",
+            "type": "ArcadeSprite",
+            "id": "19ec5b57-469b-43ae-b3dc-7586dcd056cf",
+            "label": "player",
             "scope": "CLASS",
             "texture": {
-                "key": "guapen"
+                "key": "Player",
+                "frame": 0
             },
-            "x": 64,
+            "x": 16,
             "y": 48,
-            "scaleX": 0.06267551584446829,
-            "scaleY": 0.06267551584446829,
-            "body.bounce.y": 0.5,
+            "body.bounce.y": 0.25,
             "collideWorldBounds": true,
-            "body.width": 208,
-            "body.height": 240
+            "body.width": 12,
+            "body.height": 16,
+            "body.offset.x": 2,
+            "body.offset.y": 3
         }
     ],
     "plainObjects": [
         {
-            "id": "2c53f502-0f8c-4a8d-8308-a5ebbde80df9",
-            "type": "Tilemap",
-            "label": "groundTiles",
-            "key": "groundTiles",
+            "id": "fc081465-64db-49e0-91a2-a6f75382dc44",
+            "type": "EditableTilemap",
+            "label": "ground_tilemap",
+            "width": 420,
+            "height": 16,
+            "tileWidth": 16,
+            "tileHeight": 16,
             "tilesets": [
                 {
-                    "name": "Blocks",
-                    "imageKey": "Blocks"
+                    "name": "Blocks2",
+                    "imageKey": "Blocks2",
+                    "tileWidth": 16,
+                    "tileHeight": 16,
+                    "tileMargin": 0,
+                    "tileSpacing": 0
+                }
+            ],
+            "paintLayerId": "8b291ce2-7714-4077-99db-feec0f0633ab",
+            "paintTileset": "Blocks2",
+            "layers": [
+                {
+                    "name": "collision_layer",
+                    "data": "[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,2,1,2,1,2,1,2,1,2,0,0,1,2,1,2,1,2,1,2,1,2,1,2,1,0,0,0,0,0,0,0,6,7,6,7,6,7,6,7,6,7,0,0,6,7,6,7,6,7,6,7,6,7,6,7,6,0,0,0,0,0,0,0,3,4,4,4,4,4,4,4,3,4,0,0,3,4,3,4,3,4,3,4,3,4,3,4,3,0,0,0,0,0,0,0,8,4,4,4,4,4,4,4,8,9,0,0,8,9,8,9,8,9,8,9,8,9,8,9,8,0,0,0,0,0,0,0,3,4,0,0,0,0,3,4,3,4,0,0,3,4,3,4,3,4,3,4,3,4,3,4,3,0,0,0,0,0,0,0,8,4,0,4,4,4,4,4,4,4,0,0,8,9,8,9,8,9,8,9,8,9,8,9,8,0,0,0,0,0,0,0,3,4,0,0,0,0,0,0,0,0,0,0,3,4,3,4,3,4,3,4,3,4,3,4,3,0,0,0,0,0,0,0,8,9,8,9,8,9,8,9,8,9,8,9,8,9,8,9,8,9,8,9,8,9,8,9,8,0,0,0,0,0,0,0]",
+                    "width": 32,
+                    "height": 15,
+                    "tileWidth": 16,
+                    "tileHeight": 16
                 }
             ]
         },
         {
-            "id": "277be11d-95d1-4ab8-9cc6-d8538b0713e3",
+            "id": "205637f0-af54-491e-b9f4-255313be6af4",
             "type": "Collider",
-            "label": "collider",
+            "label": "player_ground",
             "scope": "LOCAL",
-            "object1": "guapen_1",
-            "object2": "tiles"
+            "object1": "player",
+            "object2": "collision_layer"
         }
     ],
     "meta": {

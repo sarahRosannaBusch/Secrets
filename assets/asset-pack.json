@@ -2,7 +2,7 @@
     "section1": {
         "files": [
             {
-                "url": "assets/Blocks.png",
+                "url": "assets/Blocks2.png",
                 "frameConfig": {
                     "frameWidth": 16,
                     "frameHeight": 16,
@@ -12,12 +12,7 @@
                     "margin": 0
                 },
                 "type": "spritesheet",
-                "key": "Blocks"
-            },
-            {
-                "url": "assets/groundTiles.json",
-                "type": "tilemapTiledJSON",
-                "key": "groundTiles"
+                "key": "Blocks2"
             }
         ]
     },

@@ -2,9 +2,22 @@
     "section1": {
         "files": [
             {
-                "url": "assets/guapen.png",
-                "type": "image",
-                "key": "guapen"
+                "url": "animations.json",
+                "type": "animation",
+                "key": "animations"
+            },
+            {
+                "url": "assets/Player.png",
+                "frameConfig": {
+                    "frameWidth": 16,
+                    "frameHeight": 19,
+                    "startFrame": 0,
+                    "endFrame": 2,
+                    "spacing": 0,
+                    "margin": 0
+                },
+                "type": "spritesheet",
+                "key": "Player"
             }
         ]
     },

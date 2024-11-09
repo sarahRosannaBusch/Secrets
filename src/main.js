@@ -7,7 +7,7 @@ window.addEventListener('load', function () {
 		width: 256,
 		height: 240,
 		type: Phaser.AUTO,
-        backgroundColor: "#242424",
+        backgroundColor: "#000000",
 		scale: {
 			mode: Phaser.Scale.FIT,
 			autoCenter: Phaser.Scale.CENTER_BOTH
@@ -18,7 +18,8 @@ window.addEventListener('load', function () {
 				gravity: { y: 500 },
 				debug: false
 			}
-		}
+		},
+		pixelArt: true
 	});
 
 	game.scene.add("Preload", Preload);
