@@ -62,14 +62,14 @@ export default class Level extends Phaser.Scene {
 		const collision_layer = ground_tilemap.createLayer("collision_layer", ["Blocks2"], 0, 0);
 
 		// player
-		const player = this.physics.add.sprite(16, 48, "Player", 0);
+		const player = this.physics.add.sprite(18, 41, "Player", 0);
 		player.body.bounce.y = 0.25;
 		player.body.collideWorldBounds = true;
-		player.body.setOffset(2, 3);
-		player.body.setSize(12, 16, false);
+		player.body.setOffset(1, 0);
+		player.body.setSize(14, 16, false);
 
 		// player_ground
-		this.physics.add.collider(player, collision_layer);
+		this.physics.add.collider(player, collision_layer, this.collide);
 
 		this.collision_layer = collision_layer;
 		this.player = player;
@@ -101,8 +101,14 @@ export default class Level extends Phaser.Scene {
 		this.movePlayer();
 	}
 
+	collide(player, blocks) {
+		if(player.body.blocked.up) {
+			player.anims.play("bonk", true);
+		}
+	}
+
 	movePlayer() {
-		let dir, jump, stomp;
+		let dir, jump, stomp, anim;
 		if(this.cursors.left.isDown || this.wasd.A.isDown) {
             dir = 'left';
         } else if(this.cursors.right.isDown || this.wasd.D.isDown) {
@@ -115,39 +121,43 @@ export default class Level extends Phaser.Scene {
             stomp = true;
         }
 
+		if(jump) {
+			anim = 'jump';
+		} 
+
 		if(dir === 'left') {
             this.player.setVelocityX(-150);
-            if(jump) {
-                this.player.anims.play('stand', true);
-            } else {
-                this.player.anims.play('run', true);
-            }
+			anim = 'runLeft';
         } else if(dir === 'right') {
             this.player.setVelocityX(150);
-            if(jump) {
-                this.player.anims.play('stand', true);
-            } else {
-                this.player.anims.play('run', true);
-            }
-        } else {
-            this.player.setVelocityX(0);
-            if(jump) {                
-                this.player.anims.play('stand');
-            } else if(stomp) {
-                this.player.anims.play('stand');
-                this.player.setVelocityY(200);
-            } else {
-                this.player.anims.play('stand');
-            }
-        } 
+            anim = 'runRight';
+        } else if(stomp) {
+			this.player.setVelocityY(200);
+			anim = 'squat';
+		} else if(!jump) {
+			this.player.setVelocityX(0);
+			anim = 'idle';
+		}
 
 		if(jump && this.player.body.blocked.down){
             if(Phaser.Input.Keyboard.JustDown(this.cursors.up) 
                 || Phaser.Input.Keyboard.JustDown(this.wasd.W)
                 || Phaser.Input.Keyboard.JustDown(this.wasd.SPACE)) {
                 this.player.setVelocityY(-200);
-            }
+            } else {
+				anim = 'idle'; //so jump anim does keep playing if holding key
+			}
         }
+
+		let key = this.player.anims.currentAnim?.key;
+		if(key !== anim) { //check if anim is already playing
+			//console.log(anim);
+			if(this.player.anims.isPlaying && key === "bonk") {
+				//do nothing
+			} else {
+				this.player.anims.play(anim, true);
+			}
+		}
 	}
 
 	/* END-USER-CODE */

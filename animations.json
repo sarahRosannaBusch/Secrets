@@ -1,7 +1,36 @@
 {
     "anims": [
         {
-            "key": "run",
+            "key": "idle",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "Player",
+                    "frame": 0,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Player",
+                    "frame": 5,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Player",
+                    "frame": 10,
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 4,
+            "skipMissedFrames": true,
+            "repeat": -1,
+            "repeatDelay": 1000,
+            "randomFrame": false
+        },
+        {
+            "key": "runRight",
             "type": "frame",
             "frames": [
                 {
@@ -12,7 +41,13 @@
                 },
                 {
                     "key": "Player",
-                    "frame": 2,
+                    "frame": 6,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Player",
+                    "frame": 11,
                     "duration": 0,
                     "keyframe": false
                 }
@@ -23,19 +58,91 @@
             "randomFrame": false
         },
         {
-            "key": "stand",
+            "key": "runLeft",
             "type": "frame",
             "frames": [
                 {
                     "key": "Player",
-                    "frame": 0,
+                    "frame": 2,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Player",
+                    "frame": 7,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Player",
+                    "frame": 12,
                     "duration": 0,
                     "keyframe": false
                 }
             ],
-            "frameRate": 24,
+            "frameRate": 4,
             "skipMissedFrames": true,
             "repeat": -1,
+            "randomFrame": false
+        },
+        {
+            "key": "jump",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "Player",
+                    "frame": 8,
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 4,
+            "skipMissedFrames": true,
+            "repeat": -1,
+            "randomFrame": false
+        },
+        {
+            "key": "squat",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "Player",
+                    "frame": 4,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Player",
+                    "frame": 9,
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 6,
+            "skipMissedFrames": true,
+            "repeat": -1,
+            "repeatDelay": 3000,
+            "randomFrame": false
+        },
+        {
+            "key": "bonk",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "Player",
+                    "frame": 8,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Player",
+                    "frame": 13,
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 5,
+            "skipMissedFrames": true,
             "randomFrame": false
         }
     ],

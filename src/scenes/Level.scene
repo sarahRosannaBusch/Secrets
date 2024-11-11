@@ -22,21 +22,20 @@
         },
         {
             "type": "ArcadeSprite",
-            "id": "19ec5b57-469b-43ae-b3dc-7586dcd056cf",
+            "id": "976ae679-21c9-4738-830c-cfcbd16b0c25",
             "label": "player",
             "scope": "CLASS",
             "texture": {
                 "key": "Player",
                 "frame": 0
             },
-            "x": 16,
-            "y": 48,
+            "x": 18,
+            "y": 41,
             "body.bounce.y": 0.25,
             "collideWorldBounds": true,
-            "body.width": 12,
+            "body.width": 14,
             "body.height": 16,
-            "body.offset.x": 2,
-            "body.offset.y": 3
+            "body.offset.x": 1
         }
     ],
     "plainObjects": [
@@ -77,7 +76,8 @@
             "label": "player_ground",
             "scope": "LOCAL",
             "object1": "player",
-            "object2": "collision_layer"
+            "object2": "collision_layer",
+            "collideCallback": "this.collide"
         }
     ],
     "meta": {
