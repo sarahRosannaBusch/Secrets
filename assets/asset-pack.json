@@ -1,20 +1,6 @@
 {
     "section1": {
-        "files": [
-            {
-                "url": "assets/Blocks2.png",
-                "frameConfig": {
-                    "frameWidth": 16,
-                    "frameHeight": 16,
-                    "startFrame": 0,
-                    "endFrame": -1,
-                    "spacing": 0,
-                    "margin": 0
-                },
-                "type": "spritesheet",
-                "key": "Blocks2"
-            }
-        ]
+        "files": []
     },
     "meta": {
         "app": "Phaser Editor 2D - Asset Pack Editor",
