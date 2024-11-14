@@ -33,6 +33,19 @@
                 "key": "Coin"
             },
             {
+                "url": "assets/Platforms.png",
+                "frameConfig": {
+                    "frameWidth": 16,
+                    "frameHeight": 16,
+                    "startFrame": 0,
+                    "endFrame": -1,
+                    "spacing": 0,
+                    "margin": 0
+                },
+                "type": "spritesheet",
+                "key": "Platforms"
+            },
+            {
                 "url": "assets/Player.png",
                 "frameConfig": {
                     "frameWidth": 16,
