@@ -46,6 +46,32 @@
                 "key": "Coin"
             },
             {
+                "url": "assets/Mobs.png",
+                "frameConfig": {
+                    "frameWidth": 32,
+                    "frameHeight": 16,
+                    "startFrame": 0,
+                    "endFrame": -1,
+                    "spacing": 0,
+                    "margin": 0
+                },
+                "type": "spritesheet",
+                "key": "Mobs"
+            },
+            {
+                "url": "assets/Plants.png",
+                "frameConfig": {
+                    "frameWidth": 16,
+                    "frameHeight": 16,
+                    "startFrame": 0,
+                    "endFrame": -1,
+                    "spacing": 0,
+                    "margin": 0
+                },
+                "type": "spritesheet",
+                "key": "Plants"
+            },
+            {
                 "url": "assets/Platforms.png",
                 "frameConfig": {
                     "frameWidth": 16,
@@ -83,6 +109,19 @@
                 },
                 "type": "spritesheet",
                 "key": "Shrooms"
+            },
+            {
+                "url": "assets/Stars.png",
+                "frameConfig": {
+                    "frameWidth": 16,
+                    "frameHeight": 16,
+                    "startFrame": 0,
+                    "endFrame": -1,
+                    "spacing": 0,
+                    "margin": 0
+                },
+                "type": "spritesheet",
+                "key": "Stars"
             }
         ]
     },
