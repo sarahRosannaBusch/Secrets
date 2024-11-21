@@ -167,7 +167,7 @@ export default class Level extends Phaser.Scene {
 		grountTiles.addTilesetImage("Blocks-sp");
 
 		// bg_layer
-		grountTiles.createLayer("bg_layer", ["Stars","Plants","Shrooms"], 0, 0);
+		const bg_layer = grountTiles.createLayer("bg_layer", ["Stars","Plants","Shrooms"], 0, 0);
 
 		// collision_layer
 		const collision_layer = grountTiles.createLayer("collision_layer", ["Shrooms","Stars","Platforms","Blocks-small","Plants"], 0, 0);
@@ -201,8 +201,8 @@ export default class Level extends Phaser.Scene {
 
 		// healthPot_1
 		/** @type {Phaser.GameObjects.Sprite & { body: Phaser.Physics.Arcade.Body }} */
-		const healthPot_1 = this.add.sprite(720, 560, "Coin", 1);
-		healthPot_1.setOrigin(0, 1);
+		const healthPot_1 = this.add.sprite(728, 560, "Coin", 1);
+		healthPot_1.setOrigin(0.5, 1);
 		this.physics.add.existing(healthPot_1, false);
 		healthPot_1.body.setSize(16, 16, false);
 		healthPot_1.play("healthPot");
@@ -363,6 +363,7 @@ export default class Level extends Phaser.Scene {
 		// player_pot_4
 		this.physics.add.overlap(player, healthPot_4, this.heal, undefined, this);
 
+		this.bg_layer = bg_layer;        
 		this.collision_layer = collision_layer;
 		this.overlap_layer = overlap_layer;
 		this.hint_1 = hint_1;
@@ -378,6 +379,8 @@ export default class Level extends Phaser.Scene {
 		this.events.emit("scene-awake");
 	}
 
+	/** @type {Phaser.Tilemaps.TilemapLayer} */
+	bg_layer;
 	/** @type {Phaser.Tilemaps.TilemapLayer} */
 	collision_layer;
 	/** @type {Phaser.Tilemaps.TilemapLayer} */
@@ -663,6 +666,10 @@ export default class Level extends Phaser.Scene {
 		}
 	}
 
+	toggleLayerVisibility(layer) { 
+		layer.setVisible(!layer.visible); 
+	}
+
 	warp0(player, obj) {
 		this.warp(player, obj, this.hint_2.x, this.hint_2.y - 32);
 	}
@@ -746,6 +753,7 @@ export default class Level extends Phaser.Scene {
 				break;
 			case "expose":
 				//expose secrets
+				this.toggleLayerVisibility(this.coverup_layer);
 				break;
 			case "antigrav":
 				//reduce gravity
