@@ -50,6 +50,18 @@
 			width: 20rem;
 			text-align: center;
 		}
+		#scoreboard {
+			position: absolute;
+			width: 100vw;
+			text-align: center;
+			top: 40%; 
+			left: 50%; 
+			transform: translate(-50%, -50%);
+			display: none;
+		}
+		#scoreboard * {
+			font-size: 30pt;
+		}
 	</style>
 
 </head>
@@ -64,6 +76,9 @@
 		<div id="secrets">
 			<input type="text" id="cheats" value="S.E.C.R.E.T.S">
 		</div>
+	</div>
+	<div id='scoreboard'>
+		<h2>Score: <span id='score'>0</span></h2>
 	</div>
 </body>
 

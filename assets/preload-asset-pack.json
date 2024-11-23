@@ -48,7 +48,7 @@
             {
                 "url": "assets/Flag.png",
                 "frameConfig": {
-                    "frameWidth": 32,
+                    "frameWidth": 16,
                     "frameHeight": 32,
                     "startFrame": 0,
                     "endFrame": -1,
