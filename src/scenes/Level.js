@@ -244,8 +244,8 @@ export default class Level extends Phaser.Scene {
 		hint_4.body.setSize(16, 16, false);
 
 		// hint_5
-		const hint_5 = this.physics.add.sprite(4400, 176, "Blocks-sp", 1);
-		hint_5.setOrigin(0, 1);
+		const hint_5 = this.physics.add.sprite(4408, 176, "Blocks-sp", 1);
+		hint_5.setOrigin(0.5, 1);
 		hint_5.body.pushable = false;
 		hint_5.body.immovable = true;
 		hint_5.body.setSize(16, 16, false);
@@ -584,7 +584,9 @@ export default class Level extends Phaser.Scene {
 			}
 		}
 
-		if(!this.gameover) {
+		if(!this.gameover && this.player.x >= 5280) {
+			this.player.setVelocityX(0);
+		} else if(!this.gameover) {
 			this.movePlayer();
 		}
 	}
@@ -599,7 +601,23 @@ export default class Level extends Phaser.Scene {
 		let time = this.registry.get("time");
 		let score = coins - time;
 		document.getElementById("score").innerText = score;
-		console.log("score: " + score);
+		let cheatsUsed = this.registry.get("cheats");
+		if(cheatsUsed) {
+			cheatsUsed.forEach((cheat) => {
+				let id = '';
+				switch(cheat) {
+					case "coins": id = "c"; break;
+					case "health": id = "h"; break;
+					case "expose": id = "e"; break;
+					case "antigrav": id = "a"; break;
+					case "time": id = "t"; break;
+					default: break;
+				}
+				let elem = document.getElementById(id);
+				elem.style.opacity = 1;
+			});
+		}
+		//console.log("score: " + score);
 	}
 
 	// for typing in secret input
