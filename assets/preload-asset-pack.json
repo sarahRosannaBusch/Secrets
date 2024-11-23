@@ -46,6 +46,19 @@
                 "key": "Coin"
             },
             {
+                "url": "assets/Flag.png",
+                "frameConfig": {
+                    "frameWidth": 32,
+                    "frameHeight": 32,
+                    "startFrame": 0,
+                    "endFrame": -1,
+                    "spacing": 0,
+                    "margin": 0
+                },
+                "type": "spritesheet",
+                "key": "Flag"
+            },
+            {
                 "url": "assets/Mobs.png",
                 "frameConfig": {
                     "frameWidth": 32,
@@ -122,6 +135,19 @@
                 },
                 "type": "spritesheet",
                 "key": "Stars"
+            },
+            {
+                "url": "assets/Traps.png",
+                "frameConfig": {
+                    "frameWidth": 32,
+                    "frameHeight": 32,
+                    "startFrame": 0,
+                    "endFrame": -1,
+                    "spacing": 0,
+                    "margin": 0
+                },
+                "type": "spritesheet",
+                "key": "Traps"
             }
         ]
     },

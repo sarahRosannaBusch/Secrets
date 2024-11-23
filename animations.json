@@ -1,35 +1,6 @@
 {
     "anims": [
         {
-            "key": "idle",
-            "type": "frame",
-            "frames": [
-                {
-                    "key": "Player",
-                    "frame": 0,
-                    "duration": 0,
-                    "keyframe": false
-                },
-                {
-                    "key": "Player",
-                    "frame": 5,
-                    "duration": 0,
-                    "keyframe": false
-                },
-                {
-                    "key": "Player",
-                    "frame": 10,
-                    "duration": 0,
-                    "keyframe": false
-                }
-            ],
-            "frameRate": 4,
-            "skipMissedFrames": true,
-            "repeat": -1,
-            "repeatDelay": 1000,
-            "randomFrame": false
-        },
-        {
             "key": "runRight",
             "type": "frame",
             "frames": [
@@ -201,6 +172,114 @@
             "skipMissedFrames": true,
             "repeat": -1,
             "repeatDelay": 1000,
+            "randomFrame": false
+        },
+        {
+            "key": "idle",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "Player",
+                    "frame": 5,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Player",
+                    "frame": 0,
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 4,
+            "skipMissedFrames": true,
+            "repeat": -1,
+            "repeatDelay": 1000,
+            "randomFrame": false
+        },
+        {
+            "key": "die",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "Player",
+                    "frame": 5,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Player",
+                    "frame": 9,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Player",
+                    "frame": 10,
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 4,
+            "skipMissedFrames": true,
+            "randomFrame": false
+        },
+        {
+            "key": "snail",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "Mobs",
+                    "frame": 3,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Mobs",
+                    "frame": 4,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Mobs",
+                    "frame": 5,
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 4,
+            "skipMissedFrames": true,
+            "repeat": -1,
+            "repeatDelay": 250,
+            "yoyo": true,
+            "randomFrame": false
+        },
+        {
+            "key": "worm",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "Mobs",
+                    "frame": 0,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Mobs",
+                    "frame": 1,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Mobs",
+                    "frame": 2,
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 4,
+            "skipMissedFrames": true,
+            "repeat": -1,
             "randomFrame": false
         }
     ],
