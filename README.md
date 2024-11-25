@@ -1,3 +1,28 @@
+#S.E.C.R.E.T.S
+##Starry-Eyed Cheaters Running Errantly Through Spacetime
+
+This game, along with all of it's assets, were created during November 2024 for for GitHub's Game Jam 2024.
+
+###Theme: Secrets
+There's more to this game than meets the eye. Keep your eyes peeled to find all the hidden passage ways, shortcuts, and more!
+
+###Wildcards
+I like a challenge, so I've incorporated all three.
+
+####Small Palette (Limit 4 colours or less)
+My colour palette is limited to:
+- Black #000000
+- Grey #C1C1C1
+- Green #07A715
+- Purple #A447F8
+
+####Cheat Mode
+Find cheat codes in game, or elsewhere, then enter them in the super S.E.C.R.E.T text input to enable them. (Hint: you can find all the secrets and collect all the coins without cheating, but the cheats may help you get a better score.)
+
+####Speed Run
+score = coins collected - time
+Let us know you best score, fastest time, and most coins collected in the comments :)
+
 # Basic JavaScript project template for Phaser Editor v4.
 
 This is a Phaser Editor v4 project template.
