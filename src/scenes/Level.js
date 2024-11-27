@@ -957,6 +957,8 @@ export default class Level extends Phaser.Scene {
 	}
 
 	takeDamage() {
+		if(this.gameover) return;
+		
 		this.damaged = true;
 		this.enableKeyboardInput(false);
 		this.player.setGravityY(0);
@@ -964,6 +966,14 @@ export default class Level extends Phaser.Scene {
 		this.player.setVelocityY(0);
 		this.elems.health.style.color = this.colours.purple;
 		this.registry.inc('health', -1);
+		let health = this.registry.get('health');
+		console.log(health);
+		if(health <= 0) {
+			this.gameover = true;
+			this.player.anims.play('die');			
+			this.t_game.remove();
+			document.getElementById('death').style.display = "block";
+		}
 	}
 
 	allowDamage() { //called after t_damage runs out
