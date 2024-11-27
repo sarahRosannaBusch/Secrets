@@ -431,10 +431,9 @@
                     "keyframe": false
                 }
             ],
-            "frameRate": 4,
+            "frameRate": 8,
             "skipMissedFrames": true,
-            "randomFrame": false,
-            "hideOnComplete": true
+            "randomFrame": false
         },
         {
             "key": "arrowLeft",
@@ -459,10 +458,9 @@
                     "keyframe": false
                 }
             ],
-            "frameRate": 4,
+            "frameRate": 8,
             "skipMissedFrames": true,
-            "randomFrame": false,
-            "hideOnComplete": true
+            "randomFrame": false
         },
         {
             "key": "drip",

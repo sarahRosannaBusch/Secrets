@@ -1,10 +1,10 @@
 # S.E.C.R.E.T.S
 ## Starry-Eyed Cheaters Running Errantly Through Spacetime
 
-I created this game and all of it's assets during November, for for GitHub's Game Jam 2024. It is coded in JavaScript using my one month free trial of the Phaser Editor, and Microsoft Copilot to save me some typing. The UI is html/css for simplicity and accessibility. I created the art with Resprite and an Apple Pen. And I recorded the sounds on my Casio electric piano and edited them with Blender.
+I created this game and all of it's assets during November 2024, for for GitHub's Game Jam. It is coded in JavaScript using my one month free trial of the Phaser Editor, and Microsoft Copilot to save me some typing. The UI is html/css for simplicity and accessibility. I created the art with Resprite and an Apple Pen. And I recorded the sounds on my Casio electric piano and edited them with Blender.
 
 # Theme: Secrets
-There's more to this game than first meets the eye. Look and listen closely to find all the hidden passage ways, shortcuts, and more!
+There's more to this game than meets the eye. Look and listen closely to find all the hidden passage ways, shortcuts, and more!
 
 ## Wildcards
 I like a challenge, so I've incorporated all three.
