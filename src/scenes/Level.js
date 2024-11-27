@@ -280,18 +280,6 @@ export default class Level extends Phaser.Scene {
 		warp.setOrigin(0.5, 1);
 		warp.body.setSize(16, 16, false);
 
-		// mobs6
-		const mobs6 = this.add.image(1376, 448, "Mobs", 6);
-		mobs6.setOrigin(0.5, 1);
-
-		// mobs8
-		const mobs8 = this.add.image(4224, 544, "Mobs", 8);
-		mobs8.setOrigin(0.5, 1);
-
-		// mobs
-		const mobs = this.add.image(4752, 544, "Mobs", 8);
-		mobs.setOrigin(0.5, 1);
-
 		// flag
 		const flag = this.physics.add.sprite(5280, 496, "Flag", 0);
 		flag.body.setSize(16, 32, false);
@@ -310,6 +298,33 @@ export default class Level extends Phaser.Scene {
 		arrow.body.velocity.x = 150;
 		arrow.body.allowGravity = false;
 		arrow.body.setSize(12, 16, false);
+
+		// worm_2
+		const worm_2 = this.physics.add.sprite(4736, 528, "Mobs", 0);
+		worm_2.setOrigin(0.5, 0);
+		worm_2.body.velocity.x = 10;
+		worm_2.body.pushable = false;
+		worm_2.body.setOffset(0, 8);
+		worm_2.body.setSize(32, 8, false);
+		worm_2.play("worm");
+
+		// worm_1
+		const worm_1 = this.physics.add.sprite(4224, 528, "Mobs", 0);
+		worm_1.setOrigin(0.5, 0);
+		worm_1.body.velocity.x = 10;
+		worm_1.body.pushable = false;
+		worm_1.body.setOffset(0, 8);
+		worm_1.body.setSize(32, 8, false);
+		worm_1.play("worm");
+
+		// worm
+		const worm = this.physics.add.sprite(1376, 432, "Mobs", 0);
+		worm.setOrigin(0.5, 0);
+		worm.body.velocity.x = 10;
+		worm.body.pushable = false;
+		worm.body.setOffset(0, 8);
+		worm.body.setSize(32, 8, false);
+		worm.play("worm");
 
 		// player
 		const player = this.physics.add.sprite(48, 432, "Player", 0);
@@ -610,6 +625,24 @@ export default class Level extends Phaser.Scene {
 
 		// player_arrow_1
 		this.physics.add.collider(player, arrow_1, this.arrowDamage1, undefined, this);
+
+		// worm_ground
+		this.physics.add.collider(worm, collision_layer, this.moveWorm, undefined, this);
+
+		// player_worm
+		this.physics.add.collider(player, worm, this.hitWorm, undefined, this);
+
+		// worm_ground_1
+		this.physics.add.collider(worm_1, collision_layer, this.moveWorm, undefined, this);
+
+		// worm_ground_2
+		this.physics.add.collider(worm_2, collision_layer, this.moveWorm, undefined, this);
+
+		// player_worm_1
+		this.physics.add.collider(player, worm_1, this.hitWorm, undefined, this);
+
+		// player_worm_2
+		this.physics.add.collider(player, worm_2, this.hitWorm, undefined, this);
 
 		this.bg_layer = bg_layer;
 		this.collision_layer = collision_layer;
@@ -921,6 +954,29 @@ export default class Level extends Phaser.Scene {
 			snail.setVelocityX(-5);
 			snail.flipX = true; // Face left
 			snail.body.setOffset(14, 0);
+		}
+	}
+
+	moveWorm(worm, tile) {
+		if(worm.body.blocked.left) {
+			worm.setVelocityX(10);
+			worm.flipX = false; // Face right
+		} else if(worm.body.blocked.right) { 
+			worm.setVelocityX(-10);
+			worm.flipX = true; // Face left
+		}
+	}
+
+	hitWorm(player, worm) {
+		const playerBottom = player.body.y + 8;
+		const wormTop = worm.body.y - 8;
+
+		if (playerBottom <= wormTop) {
+			// Player lands on top of the worm
+			this.player.setVelocityY(-600);
+		} else { //no if(!this.damaged) to make worms extra dangerous
+			// Player collides from the sides
+			this.takeDamage(player);
 		}
 	}
 

@@ -291,42 +291,6 @@
             "body.height": 16
         },
         {
-            "type": "Image",
-            "id": "01e38900-6813-438d-b9b5-2dab8c0f418f",
-            "label": "mobs6",
-            "texture": {
-                "key": "Mobs",
-                "frame": 6
-            },
-            "x": 1376,
-            "y": 448,
-            "originY": 1
-        },
-        {
-            "type": "Image",
-            "id": "69e08b5e-df84-4766-8081-bef2cc9ee1fc",
-            "label": "mobs8",
-            "texture": {
-                "key": "Mobs",
-                "frame": 8
-            },
-            "x": 4224,
-            "y": 544,
-            "originY": 1
-        },
-        {
-            "type": "Image",
-            "id": "f6af9b5f-12e2-4dce-aedb-a6997628a22d",
-            "label": "mobs",
-            "texture": {
-                "key": "Mobs",
-                "frame": 8
-            },
-            "x": 4752,
-            "y": 544,
-            "originY": 1
-        },
-        {
             "type": "ArcadeSprite",
             "id": "e31f1119-7354-4ee5-8e4a-78398526b65e",
             "label": "flag",
@@ -376,6 +340,63 @@
             "allowGravity": false,
             "body.width": 12,
             "body.height": 16
+        },
+        {
+            "type": "ArcadeSprite",
+            "id": "cb2ac4df-dacd-4f1b-9b6a-b52ad2fe5b89",
+            "label": "worm_2",
+            "texture": {
+                "key": "Mobs",
+                "frame": 0
+            },
+            "x": 4736,
+            "y": 528,
+            "originY": 0,
+            "animationPlayMethod": 1,
+            "animationKey": "worm",
+            "body.velocity.x": 10,
+            "pushable": false,
+            "body.width": 32,
+            "body.height": 8,
+            "body.offset.y": 8
+        },
+        {
+            "type": "ArcadeSprite",
+            "id": "5526f503-aa36-4bff-a603-54fa4370bc09",
+            "label": "worm_1",
+            "texture": {
+                "key": "Mobs",
+                "frame": 0
+            },
+            "x": 4224,
+            "y": 528,
+            "originY": 0,
+            "animationPlayMethod": 1,
+            "animationKey": "worm",
+            "body.velocity.x": 10,
+            "pushable": false,
+            "body.width": 32,
+            "body.height": 8,
+            "body.offset.y": 8
+        },
+        {
+            "type": "ArcadeSprite",
+            "id": "6747ac6e-ae4c-4597-8d7b-3367fee33960",
+            "label": "worm",
+            "texture": {
+                "key": "Mobs",
+                "frame": 0
+            },
+            "x": 1376,
+            "y": 432,
+            "originY": 0,
+            "animationPlayMethod": 1,
+            "animationKey": "worm",
+            "body.velocity.x": 10,
+            "pushable": false,
+            "body.width": 32,
+            "body.height": 8,
+            "body.offset.y": 8
         },
         {
             "type": "ArcadeSprite",
@@ -1405,6 +1426,66 @@
             "object1": "player",
             "object2": "arrow_1",
             "collideCallback": "this.arrowDamage1",
+            "callbackContext": "this"
+        },
+        {
+            "id": "cbeb91e3-388f-4c70-a664-cd39f790ac57",
+            "type": "Collider",
+            "label": "worm_ground",
+            "scope": "LOCAL",
+            "object1": "worm",
+            "object2": "collision_layer",
+            "collideCallback": "this.moveWorm",
+            "callbackContext": "this"
+        },
+        {
+            "id": "7d2584c2-8bcf-4526-8163-e5c9e2ebf9cf",
+            "type": "Collider",
+            "label": "player_worm",
+            "scope": "LOCAL",
+            "object1": "player",
+            "object2": "worm",
+            "collideCallback": "this.hitWorm",
+            "callbackContext": "this"
+        },
+        {
+            "id": "887cc979-df91-4caa-ad33-136bb08bcd3a",
+            "type": "Collider",
+            "label": "worm_ground_1",
+            "scope": "LOCAL",
+            "object1": "worm_1",
+            "object2": "collision_layer",
+            "collideCallback": "this.moveWorm",
+            "callbackContext": "this"
+        },
+        {
+            "id": "dbb3f195-296c-4303-a8ea-55f6c1d11231",
+            "type": "Collider",
+            "label": "worm_ground_2",
+            "scope": "LOCAL",
+            "object1": "worm_2",
+            "object2": "collision_layer",
+            "collideCallback": "this.moveWorm",
+            "callbackContext": "this"
+        },
+        {
+            "id": "925468ca-1e8a-44bb-8ed9-353a2e42d3d6",
+            "type": "Collider",
+            "label": "player_worm_1",
+            "scope": "LOCAL",
+            "object1": "player",
+            "object2": "worm_1",
+            "collideCallback": "this.hitWorm",
+            "callbackContext": "this"
+        },
+        {
+            "id": "29d655e4-927f-4007-8b15-781baa3a2ba5",
+            "type": "Collider",
+            "label": "player_worm_2",
+            "scope": "LOCAL",
+            "object1": "player",
+            "object2": "worm_2",
+            "collideCallback": "this.hitWorm",
             "callbackContext": "this"
         }
     ],
