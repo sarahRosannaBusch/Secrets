@@ -470,6 +470,36 @@ export default class Level extends Phaser.Scene {
 		acid_18.setOrigin(0, 0.5);
 		acid_18.body.setSize(16, 16, false);
 
+		// text_c
+		const text_c = this.add.text(307, 128, "", {});
+		text_c.setOrigin(0, 0.5);
+		text_c.text = "coins";
+		text_c.setStyle({ "color": "#000", "fontFamily": "monospace", "stroke": "#000", "resolution": 32 });
+
+		// text_h
+		const text_h = this.add.text(653, 640, "", {});
+		text_h.setOrigin(0, 0.5);
+		text_h.text = "health";
+		text_h.setStyle({ "color": "#000", "fontFamily": "monospace", "stroke": "#000", "resolution": 32 });
+
+		// text_e
+		const text_e = this.add.text(1629, 384, "", {});
+		text_e.setOrigin(0, 0.5);
+		text_e.text = "expose";
+		text_e.setStyle({ "color": "#000", "fontFamily": "monospace", "stroke": "#000", "resolution": 32 });
+
+		// text_a
+		const text_a = this.add.text(2556, 592, "", {});
+		text_a.setOrigin(0, 0.5);
+		text_a.text = "antigrav";
+		text_a.setStyle({ "color": "#000", "fontFamily": "monospace", "stroke": "#000", "resolution": 32 });
+
+		// text_t
+		const text_t = this.add.text(4391, 128, "", {});
+		text_t.setOrigin(0, 0.5);
+		text_t.text = "time";
+		text_t.setStyle({ "color": "#000", "fontFamily": "monospace", "stroke": "#000", "resolution": 32 });
+
 		// player_ground
 		this.physics.add.collider(player, collision_layer, this.collide, undefined, this);
 
@@ -656,6 +686,11 @@ export default class Level extends Phaser.Scene {
 		this.arrow = arrow;
 		this.player = player;
 		this.coverup_layer = coverup_layer;
+		this.text_c = text_c;
+		this.text_h = text_h;
+		this.text_e = text_e;
+		this.text_a = text_a;
+		this.text_t = text_t;
 		this.player_overlap = player_overlap;
 		this.player_warp_0 = player_warp_0;
 
@@ -686,6 +721,16 @@ export default class Level extends Phaser.Scene {
 	player;
 	/** @type {Phaser.Tilemaps.TilemapLayer} */
 	coverup_layer;
+	/** @type {Phaser.GameObjects.Text} */
+	text_c;
+	/** @type {Phaser.GameObjects.Text} */
+	text_h;
+	/** @type {Phaser.GameObjects.Text} */
+	text_e;
+	/** @type {Phaser.GameObjects.Text} */
+	text_a;
+	/** @type {Phaser.GameObjects.Text} */
+	text_t;
 	/** @type {Phaser.Physics.Arcade.Collider} */
 	player_overlap;
 	/** @type {Phaser.Physics.Arcade.Collider} */
@@ -1152,32 +1197,37 @@ export default class Level extends Phaser.Scene {
 
 	hint1() {		
 		if(this.player_squatting) {
-			//todo: show cheat code
-			console.log("COINS");
+			this.text_c.setStyle({ "fill": "#c1c1c1" });
+		} else {
+			this.text_c.setStyle({ "fill": "#000" });
 		}
 	}
 	hint2() {		
 		if(this.player_squatting) {
-			//todo: show cheat code
-			console.log("HEALTH");
+			this.text_h.setStyle({ "fill": "#c1c1c1" });
+		} else {
+			this.text_h.setStyle({ "fill": "#000" });
 		}
 	}
 	hint3() {		
 		if(this.player_squatting) {
-			//todo: show cheat code
-			console.log("EXPOSE");
+			this.text_e.setStyle({ "fill": "#c1c1c1" });
+		} else {
+			this.text_e.setStyle({ "fill": "#000" });
 		}
 	}
-	hint4() {		
+	hint4() {	
 		if(this.player_squatting) {
-			//todo: show cheat code
-			console.log("ANTIGRAV");
+			this.text_a.setStyle({ "fill": "#c1c1c1" });
+		} else {
+			this.text_a.setStyle({ "fill": "#000" });
 		}
 	}
 	hint5() {		
 		if(this.player_squatting) {
-			//todo: show cheat code
-			console.log("TIME");
+			this.text_t.setStyle({ "fill": "#c1c1c1" });
+		} else {
+			this.text_t.setStyle({ "fill": "#000" });
 		}
 	}
 
