@@ -407,6 +407,91 @@
             "skipMissedFrames": true,
             "repeat": -1,
             "randomFrame": false
+        },
+        {
+            "key": "arrowRight",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "Traps",
+                    "frame": 6,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Traps",
+                    "frame": 8,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Traps",
+                    "frame": 10,
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 4,
+            "skipMissedFrames": true,
+            "randomFrame": false,
+            "hideOnComplete": true
+        },
+        {
+            "key": "arrowLeft",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "Traps",
+                    "frame": 0,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Traps",
+                    "frame": 2,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Traps",
+                    "frame": 4,
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 4,
+            "skipMissedFrames": true,
+            "randomFrame": false,
+            "hideOnComplete": true
+        },
+        {
+            "key": "drip",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "Traps",
+                    "frame": 1,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Traps",
+                    "frame": 11,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Traps",
+                    "frame": 3,
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 4,
+            "skipMissedFrames": true,
+            "delay": 250,
+            "randomFrame": false,
+            "hideOnComplete": true
         }
     ],
     "globalTimeScale": 1,

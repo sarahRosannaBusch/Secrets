@@ -139,8 +139,8 @@
             {
                 "url": "assets/Traps.png",
                 "frameConfig": {
-                    "frameWidth": 32,
-                    "frameHeight": 32,
+                    "frameWidth": 16,
+                    "frameHeight": 16,
                     "startFrame": 0,
                     "endFrame": -1,
                     "spacing": 0,
