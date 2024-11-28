@@ -747,6 +747,9 @@ export default class Level extends Phaser.Scene {
 		this.player.setInteractive();
 		this.cursors = this.input.keyboard.createCursorKeys();
 		this.wasd = this.input.keyboard.addKeys('W,S,A,D,SPACE');
+        this.input.addPointer(1); //for multi-touch
+        this.touchY = 0;
+        this.click = 0; //duration of last click
 
 		let camera = this.cameras.cameras[0];
 		camera.width = window.innerWidth * this.game.scale.displayScale.x;
@@ -958,7 +961,7 @@ export default class Level extends Phaser.Scene {
 
 	takeDamage() {
 		if(this.gameover) return;
-		
+
 		this.damaged = true;
 		this.enableKeyboardInput(false);
 		this.player.setGravityY(0);
@@ -1093,9 +1096,45 @@ export default class Level extends Phaser.Scene {
 	}
 
 	movePlayer() {
-		let dir, jump, stomp, anim;
+		let touch = false; //track whether input is keyboard or touch
+
+        let dirPointer = this.input.pointer1;
+        let jumpPointer = this.input.pointer2;
+    
+        let jump = touch = jumpPointer.isDown ? true : false;
+        let stomp = false;
+        let dir, anim;
+
 		this.player_squatting = false;
 
+	    //touch controls
+        if(dirPointer.isDown) {
+            let x = dirPointer.position.x;
+            let y = dirPointer.position.y;
+            //console.log('touchY: ' + this.touchY);
+            if(this.touchY === 0) {
+                this.touchY = y;
+            } else if(y > this.touchY + 10) {                
+                stomp = true;
+            } else {
+                if(x > this.cameras.cameras[0].width/2) {
+                    dir = 'right';
+                } else {            
+                    dir = 'left';
+                }
+            }
+        } else {            
+            this.touchY = 0;
+            dir = false;
+            let dur = dirPointer.getDuration();
+            if((this.click !== dur) && (dur > 0) && (dur < 150)) {
+                //if dirPointer isn't down and screen is tapped, jump
+                jump = touch = true;
+                this.click = dur; //to disable autojumping
+            }
+        }
+
+        //keyboard controls
 		if(this.cursors.left.isDown || this.wasd.A.isDown) {
             dir = 'left';
         } else if(this.cursors.right.isDown || this.wasd.D.isDown) {
@@ -1108,27 +1147,27 @@ export default class Level extends Phaser.Scene {
             stomp = true;
         }
 
-		if(jump) {
-			anim = 'jump';
-		} 
-
 		if(dir === 'left') {
             this.player.setVelocityX(-this.player_dx); 
 			anim = 'runLeft';
         } else if(dir === 'right') {
             this.player.setVelocityX(this.player_dx);
             anim = 'runRight';
-        } else if(stomp) {
-			this.player.setVelocityY(this.player_dy);
-			this.player_squatting = true;
-			anim = 'squat';
-		} else if(!jump) {
+        } else {			
 			this.player.setVelocityX(0);
-			anim = 'idle';
+			if(jump) {                
+                anim = 'jump';
+            } else if(stomp) {
+				this.player.setVelocityY(this.player_dy);
+				this.player_squatting = true;
+				anim = 'squat';
+			} else if(!jump) {
+				anim = 'idle';
+			}
 		}
 
 		if(jump && this.player.body.blocked.down){
-            if(Phaser.Input.Keyboard.JustDown(this.cursors.up) 
+            if(touch || Phaser.Input.Keyboard.JustDown(this.cursors.up) 
                 || Phaser.Input.Keyboard.JustDown(this.wasd.W)
                 || Phaser.Input.Keyboard.JustDown(this.wasd.SPACE)) {
                 this.player.setVelocityY(-this.player_dy);
