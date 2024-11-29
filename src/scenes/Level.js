@@ -650,23 +650,23 @@ export default class Level extends Phaser.Scene {
 		// player_arrow
 		this.physics.add.collider(player, arrow, this.arrowDamage, undefined, this);
 
-		// arrow_ground_1
-		this.physics.add.collider(arrow_1, collision_layer, this.resetArrow1, undefined, this);
-
 		// player_arrow_1
 		this.physics.add.collider(player, arrow_1, this.arrowDamage1, undefined, this);
 
+		// arrow_ground_1
+		this.physics.add.collider(arrow_1, collision_layer, this.resetArrow1, undefined, this);
+
 		// worm_ground
 		this.physics.add.collider(worm, collision_layer, this.moveWorm, undefined, this);
-
-		// player_worm
-		this.physics.add.collider(player, worm, this.hitWorm, undefined, this);
 
 		// worm_ground_1
 		this.physics.add.collider(worm_1, collision_layer, this.moveWorm, undefined, this);
 
 		// worm_ground_2
 		this.physics.add.collider(worm_2, collision_layer, this.moveWorm, undefined, this);
+
+		// player_worm
+		this.physics.add.collider(player, worm, this.hitWorm, undefined, this);
 
 		// player_worm_1
 		this.physics.add.collider(player, worm_1, this.hitWorm, undefined, this);
@@ -970,7 +970,7 @@ export default class Level extends Phaser.Scene {
 		this.elems.health.style.color = this.colours.purple;
 		this.registry.inc('health', -1);
 		let health = this.registry.get('health');
-		console.log(health);
+		//console.log(health);
 		if(health <= 0) {
 			this.gameover = true;
 			this.player.anims.play('die');			
@@ -1100,7 +1100,7 @@ export default class Level extends Phaser.Scene {
 
         let dirPointer = this.input.pointer1;
         let jumpPointer = this.input.pointer2;
-    
+
         let jump = touch = jumpPointer.isDown ? true : false;
         let stomp = false;
         let dir, anim;
