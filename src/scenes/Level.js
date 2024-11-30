@@ -289,6 +289,7 @@ export default class Level extends Phaser.Scene {
 		const arrow_1 = this.physics.add.sprite(3744, 720, "Traps", 0);
 		arrow_1.setOrigin(0, 1);
 		arrow_1.body.velocity.x = -150;
+		arrow_1.body.pushable = false;
 		arrow_1.body.setOffset(4, 0);
 		arrow_1.body.setSize(12, 16, false);
 
@@ -297,6 +298,7 @@ export default class Level extends Phaser.Scene {
 		arrow.setOrigin(0, 1);
 		arrow.body.velocity.x = 150;
 		arrow.body.allowGravity = false;
+		arrow.body.pushable = false;
 		arrow.body.setSize(12, 16, false);
 
 		// worm_2
@@ -1082,17 +1084,11 @@ export default class Level extends Phaser.Scene {
 	arrowDamage(player, arrow) {
 		if(!this.damaged) this.takeDamage();
 		arrow.anims.play('arrowRight');
-		arrow.on('animationcomplete-arrowRight', function (anim, frame) {
-			arrow.destroy();
-		}, this);
 	}
 
 	arrowDamage1(player, arrow) {
 		if(!this.damaged) this.takeDamage();
 		arrow.anims.play('arrowLeft');
-		arrow.on('animationcomplete-arrowLeft', function (anim, frame) {
-			arrow.destroy();
-		}, this);
 	}
 
 	movePlayer() {
