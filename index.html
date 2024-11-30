@@ -88,13 +88,16 @@
 		#death h2 {
 			color: #A447F8;
 		}
-		#death p {
+		#death button {
 			color: #07A715;
+			border: none;
+			text-decoration: underline;
+			font-size: large;
+			font-weight: bold;
 		}
 		.blackBG {
 			background: #000;
 			padding: 1rem;
-			line-height: 3rem;
 		}
 		
 		@media (max-width: 600px) {
@@ -129,8 +132,11 @@
 	</div>
 	<div id='death'>
 		<h2><span class='blackBG'>Game Over</span></h2>
-		<p><span class='blackBG'>(refresh page)</span></p>
+		<button onclick="refresh()" class='blackBG'>Try Again</button>
 	</div>
+	<script>
+		function refresh() { location.reload(); }
+	</script>
 </body>
 
 </html>

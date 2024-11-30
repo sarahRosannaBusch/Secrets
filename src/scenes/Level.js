@@ -1161,6 +1161,8 @@ export default class Level extends Phaser.Scene {
 				this.player.setVelocityY(this.player_dy);
 				this.player_squatting = true;
 				anim = 'squat';
+			} else if(this.damaged) {
+				anim = 'damaged';
 			} else if(!jump) {
 				anim = 'idle';
 			}
