@@ -762,15 +762,6 @@ export default class Level extends Phaser.Scene {
 			camera.width = window.innerWidth * this.game.scale.displayScale.x;
 		});
 
-		this.t_game = this.time.addEvent({
-			delay: 1000, //ms
-			callback: this.tickClock,
-			callbackScope: this,
-			loop: true,
-			timeScale: 1,
-			paused: false
-		});
-
 		this.elems = { //dom elements
 			time: document.getElementById("time"),
 			health: document.getElementById("health"),
@@ -833,7 +824,33 @@ export default class Level extends Phaser.Scene {
 			if (e.target !== this.elems.cheats) { this.elems.cheats.blur(); } 
 		}); 
 
+		//wait to start clock until player makes first move
+		this.firstInteraction = false;
+		this.input.once('pointerdown', function () { 
+			if (!this.firstInteraction) { 
+				this.startClock(); 
+				this.firstInteraction = true; 
+			}
+		}, this); 
+		this.input.keyboard.once('keydown', function () { 
+			if (!this.firstInteraction) { 
+				this.startClock(); 
+				this.firstInteraction = true; 
+			}
+		}, this);
+
 		document.getElementById("ui").style.display = "block"; //wait until scene is loaded
+	}
+
+	startClock() {		
+		this.t_game = this.time.addEvent({
+			delay: 1000, //ms
+			callback: this.tickClock,
+			callbackScope: this,
+			loop: true,
+			timeScale: 1,
+			paused: false
+		});
 	}
 
 	update(t, d) {
