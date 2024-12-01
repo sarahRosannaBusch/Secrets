@@ -839,10 +839,22 @@ export default class Level extends Phaser.Scene {
 			}
 		}, this);
 
+		//soundFX
+		this.tockFX = this.sound.add('tock');
+		this.coinFX = this.sound.add('collectCoin');
+		this.warpFX = this.sound.add('warp');
+		this.potFX = this.sound.add('pot');
+		this.startFX = this.sound.add('start');
+		this.finishFX = this.sound.add('finish');
+		this.damageFX = this.sound.add('damage');
+		this.danceFX = this.sound.add('dance');
+
+
 		document.getElementById("ui").style.display = "block"; //wait until scene is loaded
 	}
 
 	startClock() {		
+		this.startFX.play();
 		this.t_game = this.time.addEvent({
 			delay: 1000, //ms
 			callback: this.tickClock,
@@ -870,12 +882,22 @@ export default class Level extends Phaser.Scene {
 		if(!this.gameover && this.player.x >= 5280) {
 			this.player.setVelocityX(0);
 		} else if(!this.gameover) {
+			if (this.player.body.velocity.x === 0 && this.player.body.velocity.y === 0) { 
+				if (!this.playerIsIdle) { // Player has just become idle, record the start time 
+					this.idleStartTime = this.time.now; 
+					this.playerIsIdle = true; 
+				} 
+			} else { // Player is moving, reset idle state 
+				this.playerIsIdle = false;
+			}
+
 			this.movePlayer();
 		}
 	}
 
 	score(player, flag) {
 		this.gameover = true;
+		this.finishFX.play();
 		this.t_game.remove();
 		this.flag.anims.play('flagEnd');
 		this.enableKeyboardInput(false);
@@ -924,6 +946,12 @@ export default class Level extends Phaser.Scene {
 
 	tickClock() {
 		let count = (999999999999 + 1 - this.t_game.getRepeatCount()); //bc it counts down
+		if(this.playerIsIdle) {
+			let idleTime = (this.time.now - this.idleStartTime) / 1000;
+			if(idleTime > 3 && count % 2 !== 0) {
+				this.tockFX.play();
+			}
+		}
 		this.registry.set("time", count);
 		this.elems.time.innerText = count;
 		//console.log("count: " + count);
@@ -971,6 +999,7 @@ export default class Level extends Phaser.Scene {
 				break;
 				case COINS:
 					this.overlap_layer.removeTileAt(tile.x, tile.y);
+					this.coinFX.play({volume: 0.5});
 					this.registry.inc("coins", this.coin_value);
 				break;
 				default: break;
@@ -981,6 +1010,7 @@ export default class Level extends Phaser.Scene {
 	takeDamage() {
 		if(this.gameover) return;
 
+		this.damageFX.play();
 		this.damaged = true;
 		this.enableKeyboardInput(false);
 		this.player.setGravityY(0);
@@ -1012,6 +1042,7 @@ export default class Level extends Phaser.Scene {
 
 	heal(player, pot) {
 		console.log("healing");
+		this.potFX.play();
 		pot.destroy();
 		this.registry.inc('health', 1);
 		this.elems.health.style.color = this.colours.green;
@@ -1227,18 +1258,20 @@ export default class Level extends Phaser.Scene {
 		this.warp(player, obj, 5968, 420);
 		this.player.anims.play('dance');
 		let timer = this.time.addEvent({
-				delay: 1000,
-				repeat: 0,
-				callback: () => {
-					this.elems.scoreboard.style.display = "block";
-				},
-				callbackScope: this,
-				paused: false
-			});
+			delay: 500,
+			repeat: 0,
+			callback: () => {
+				this.elems.scoreboard.style.display = "block";
+				this.danceFX.play({ loop: true });
+			},
+			callbackScope: this,
+			paused: false
+		});
 	}
 
 	warp(player, obj, x, y) {
 		//console.log(player.x + ", " + obj.x)
+		if(!this.warpFX.isPlaying) this.warpFX.play();
 		let left = obj.x - 4;
 		let right = obj.x + 4;
 		let p = player.x;

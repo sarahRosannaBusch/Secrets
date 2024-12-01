@@ -33,6 +33,13 @@
                 "key": "Blocks-sp"
             },
             {
+                "url": [
+                    "assets/coin.mp3"
+                ],
+                "type": "audio",
+                "key": "coin"
+            },
+            {
                 "url": "assets/Coin.png",
                 "frameConfig": {
                     "frameWidth": 16,
@@ -44,6 +51,34 @@
                 },
                 "type": "spritesheet",
                 "key": "Coin"
+            },
+            {
+                "url": [
+                    "assets/collectCoin.mp3"
+                ],
+                "type": "audio",
+                "key": "collectCoin"
+            },
+            {
+                "url": [
+                    "assets/damage.mp3"
+                ],
+                "type": "audio",
+                "key": "damage"
+            },
+            {
+                "url": [
+                    "assets/dance.mp3"
+                ],
+                "type": "audio",
+                "key": "dance"
+            },
+            {
+                "url": [
+                    "assets/finish.mp3"
+                ],
+                "type": "audio",
+                "key": "finish"
             },
             {
                 "url": "assets/Flag.png",
@@ -111,6 +146,13 @@
                 "key": "Player"
             },
             {
+                "url": [
+                    "assets/pot.mp3"
+                ],
+                "type": "audio",
+                "key": "pot"
+            },
+            {
                 "url": "assets/Shrooms.png",
                 "frameConfig": {
                     "frameWidth": 16,
@@ -137,6 +179,20 @@
                 "key": "Stars"
             },
             {
+                "url": [
+                    "assets/start.mp3"
+                ],
+                "type": "audio",
+                "key": "start"
+            },
+            {
+                "url": [
+                    "assets/tock.mp3"
+                ],
+                "type": "audio",
+                "key": "tock"
+            },
+            {
                 "url": "assets/Traps.png",
                 "frameConfig": {
                     "frameWidth": 16,
@@ -148,6 +204,13 @@
                 },
                 "type": "spritesheet",
                 "key": "Traps"
+            },
+            {
+                "url": [
+                    "assets/warp.mp3"
+                ],
+                "type": "audio",
+                "key": "warp"
             }
         ]
     },
