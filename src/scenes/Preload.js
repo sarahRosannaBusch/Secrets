@@ -26,21 +26,27 @@ export default class Preload extends Phaser.Scene {
 	editorCreate() {
 
 		// progressBar
-		const progressBar = this.add.rectangle(497, 361, 256, 20);
+		const progressBar = this.add.rectangle(5, 230, 256, 20);
+		progressBar.scaleX = 0.7972100444261355;
+		progressBar.scaleY = 0.7972100444261355;
 		progressBar.setOrigin(0, 0);
 		progressBar.isFilled = true;
-		progressBar.fillColor = 14737632;
+		progressBar.fillColor = 501525;
+		progressBar.strokeColor = 501525;
 
 		// progressBarBg
-		const progressBarBg = this.add.rectangle(497, 361, 256, 20);
+		const progressBarBg = this.add.rectangle(5, 230, 256, 20);
+		progressBarBg.scaleX = 0.7972100444261355;
+		progressBarBg.scaleY = 0.7972100444261355;
 		progressBarBg.setOrigin(0, 0);
-		progressBarBg.fillColor = 14737632;
+		progressBarBg.fillColor = 10766328;
 		progressBarBg.isStroked = true;
+		progressBarBg.strokeColor = 10766328;
 
 		// loadingText
-		const loadingText = this.add.text(497, 329, "", {});
+		const loadingText = this.add.text(5, 212, "", {});
 		loadingText.text = "Loading...";
-		loadingText.setStyle({ "color": "#e0e0e0", "fontFamily": "arial", "fontSize": "20px" });
+		loadingText.setStyle({ "color": "#c1c1c1", "fontFamily": "monospace", "fontSize": "12px", "stroke": "#c1c1c1", "resolution": 24 });
 
 		this.progressBar = progressBar;
 

@@ -10,8 +10,8 @@
         ],
         "createMethodName": "editorCreate",
         "sceneKey": "Preload",
-        "borderWidth": 1280,
-        "borderHeight": 720
+        "borderWidth": 256,
+        "borderHeight": 256
     },
     "displayList": [
         {
@@ -19,12 +19,15 @@
             "id": "845d4ca6-7417-44fc-97e3-a3bb2fbbdd03",
             "label": "progressBar",
             "scope": "CLASS",
-            "x": 497,
-            "y": 361,
+            "x": 5,
+            "y": 230,
+            "scaleX": 0.7972100444261355,
+            "scaleY": 0.7972100444261355,
             "originX": 0,
             "originY": 0,
             "isFilled": true,
-            "fillColor": "#e0e0e0",
+            "fillColor": "#07A715",
+            "strokeColor": "#07A715",
             "width": 256,
             "height": 20
         },
@@ -32,11 +35,14 @@
             "type": "Rectangle",
             "id": "10e175a4-81b6-449e-9561-6d8ba54d3812",
             "label": "progressBarBg",
-            "x": 497,
-            "y": 361,
+            "x": 5,
+            "y": 230,
+            "scaleX": 0.7972100444261355,
+            "scaleY": 0.7972100444261355,
             "originX": 0,
             "originY": 0,
-            "fillColor": "#e0e0e0",
+            "fillColor": "#A447F8",
+            "strokeColor": "#A447F8",
             "isStroked": true,
             "width": 256,
             "height": 20
@@ -45,12 +51,14 @@
             "type": "Text",
             "id": "c4092661-6339-47cf-9fea-8abff3a46e0c",
             "label": "loadingText",
-            "x": 497,
-            "y": 329,
+            "x": 5,
+            "y": 212,
             "text": "Loading...",
-            "fontFamily": "arial",
-            "fontSize": "20px",
-            "color": "#e0e0e0"
+            "resolution": 24,
+            "fontFamily": "monospace",
+            "fontSize": "12px",
+            "color": "#c1c1c1",
+            "stroke": "#c1c1c1"
         }
     ],
     "plainObjects": [],
