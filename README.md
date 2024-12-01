@@ -1,10 +1,10 @@
 # S.E.C.R.E.T.S
 ## Starry-Eyed Cheaters Running Errantly Through Spacetime
 
-I created this platformer and all of it's assets during November 2024 for GitHub's Game Off. It's coded in JavaScript using my one month free trial of the Phaser Editor, and Microsoft Copilot to save me some typing. The UI is html/css for simplicity and accessibility. I created the art with Resprite and an Apple Pen. And I recorded the sounds on my Casio electric piano and edited them with Blender.
+I created this platformer and all of it's assets during November 2024 for GitHub's Game Off. It's coded in JavaScript using my one month free trial of the Phaser Editor, and Microsoft Copilot to save me some typing. The UI is html/css for simplicity and accessibility. I created the art with Resprite and an Apple Pen. And I recorded the sounds on my Casio electric piano and edited them with Audacity.
 
 # Theme: Secrets
-There's more to this game than meets the eye. Look and listen closely to find all the hidden passage ways, shortcuts, and more!
+There's more to this game than meets the eye. Look closely to find all the hidden passage ways, shortcuts, and more!
 
 # Wildcards
 I like a challenge, so I've incorporated all three.
@@ -33,5 +33,5 @@ TOUCHSCREEN: Two-finger touch. Hold down one side of the screen and tap with you
         Keyboard	            Touch
 jump	W / SPACE / up arrow	tap anywhere
 left	A  /  left arrow	    touch and hold left side of screen
-stomp	S  /  down arrow	    swipe down in game area
+squat	S  /  down arrow	    swipe down in game area
 right	D  / right arrow	    touch and hold right side of screen
