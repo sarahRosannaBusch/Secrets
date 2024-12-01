@@ -30,8 +30,10 @@ KEYBOARD: Everything should work as you expect. WASD or arrow keys to move. (Up 
 
 TOUCHSCREEN: Two-finger touch. Hold down one side of the screen and tap with your other thumb to jump while moving.
 
-        Keyboard	            Touch
-jump	W / SPACE / up arrow	tap anywhere
-left	A  /  left arrow	    touch and hold left side of screen
-squat	S  /  down arrow	    swipe down in game area
-right	D  / right arrow	    touch and hold right side of screen
+| Action  | Keyboard               | Touch                             |
+|---------|------------------------|-----------------------------------|
+| Jump    | W / SPACE / up arrow   | Tap anywhere                      |
+| Left    | A / left arrow         | Touch and hold left side of screen|
+| Squat   | S / down arrow         | Swipe down in game area           |
+| Right   | D / right arrow        | Touch and hold right side of screen|
+
