@@ -117,6 +117,17 @@
 				padding: 5rem 1rem 0.5rem;
 			}
 		}
+		.error-message { 
+			position: absolute; 
+			top: 50%; left: 50%; 
+			transform: translate(-50%, -50%); 
+			color: red; 
+			font-size: 20px; 
+			background-color: #000; 
+			padding: 10px; 
+			border: 1px solid red; 
+			border-radius: 5px; 
+		}
 	</style>
 
 </head>
@@ -150,6 +161,7 @@
 	<script>
 		function refresh() { location.reload(); }
 	</script>
+	<div id="error-container"></div>
 </body>
 
 </html>
